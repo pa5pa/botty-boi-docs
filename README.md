@@ -1,0 +1,133 @@
+# Botty Boi
+
+A private Discord bot for one gaming server. It collects game news, tracks friends' streams on a leaderboard, hands out roles, and keeps the server tidy. It runs around the clock on a dedicated Windows PC.
+
+It isn't a public bot and only stays in its own server. See the [Privacy Policy](PRIVACY.md) and [Terms of Service](TERMS.md).
+
+## Features
+
+| Feature | What it does |
+|---|---|
+| **News** | Checks about 40 sources. Official game feeds are checked every 3 hours and everything else every 10–30 minutes. It merges duplicate stories. |
+| **News channels** | Every article goes to the firehose, the best stories get their own posts, and a digest covers each 3-hour block. |
+| **News voting** | Admins and trusted voters rate posts with reactions, which adjusts source scores. The bot removes each reaction once it's counted, so votes aren't on show. |
+| **Streamer leaderboard** | Tracks Twitch, Kick and YouTube: daily recap, weekly top 5, quarterly top 3 and a live standings message. |
+| **Live Now** | A role that lists people in their own group in the member list while they stream. |
+| **Roles** | People react in the roles channel to open the channels they want. |
+| **Cleanup** | Deletes messages by rule and keeps commands in the right channel. |
+| **Logs** | Private channels record commands, moderation, news decisions and system events. |
+| **Health** | Hourly PC status, warnings when the PC is struggling, nightly backups, and a weekly PC restart. |
+
+## Using the bot
+
+### Everyone
+
+| Command | What it does |
+|---|---|
+| `/ping` | Checks the bot is awake |
+| `/leaderboard` | Shows standings, today, yesterday, this week, this quarter or past winners |
+| `/streamer list` | Shows who's linked and on which platforms |
+| `/streamer profile` | Shows streamer stats for the last 30 days |
+
+**To pick roles:** react in the roles channel, and remove the reaction to drop the role.
+
+### Streamers
+
+| Command | What it does |
+|---|---|
+| `/streamer link` | Links a channel. Only you see the reply. |
+| `/streamer unlink` | Removes one platform and keeps your stats |
+| `/streamer aliases` | Adds other names people use for you, for collab tracking |
+| `/streamer leave` | Deletes all your streamer data |
+
+You can also paste your channel link in the private links channel. The bot removes the message and confirms by DM.
+
+**All the bot needs from a streamer is the channel link. Never share a stream key or password.**
+
+### Owner only
+
+Only the bot owner can run these. Being a Discord admin isn't enough, and anyone else just gets a "no permission" reply. Most are hidden from regular members' slash menus. Discord can't hide part of a group, so the owner-only `/streamer` options are still listed.
+
+| Command | What it does |
+|---|---|
+| `/news` | Manages sources: `sources`, `toggle`, `settier`, `addsource`, `test`, `testall`, `pollnow` |
+| `/news digest` | Posts the current 3-hour digest so far |
+| `/news stats`, `/news overlap` | Shows how votes affect sources, and which sources repeat each other |
+| `/cleanup`, `/restrict` | Sets delete rules and channel restrictions |
+| `/audit` | Shows log channels and recent log lines |
+| `/roles refresh` | Applies role changes from `config.py` |
+| `/pc` | Shows PC and bot health |
+| `/streamer add`, `remove`, `setchannel`, `postnow`, `test` | Manages the leaderboard |
+| `/status`, `/sync`, `/backup` | Shows health, re-registers commands, backs up now |
+| `/restart`, `/shutdown` | Restarts or stops the bot, with a notice |
+| `/pcrestart` | Cleans up, backs up, and restarts the whole PC |
+| `/maintenance` | Shows, schedules or cancels announced maintenance |
+
+## Running the bot
+
+### Starting and stopping
+
+- **Automatic start:** the `GameBot` task in Windows Task Scheduler runs `start_bot.bat` when the PC boots, with no sign-in needed. It runs in the background with no window, so use `/pc` or `logs/bot.log` to check on it.
+- **By hand:** double-click `start_bot.bat`. If the bot is already running, the new window just waits, so a second copy can't post everything twice.
+- **Crashes:** `start_bot.bat` restarts the bot after 10 seconds.
+- **Turning it off:** use `/shutdown`. It stays off until started again.
+
+### What runs automatically
+
+| When | What |
+|---|---|
+| Every night at 4 AM (PC time) | Backup, cleanup of old records, and removal of log posts older than 30 days |
+| About once a week at 4 AM | Cleanup and backup, then a PC restart. Announced 1 hour ahead, and due once the PC has been on for 7 days. |
+| Hourly | PC status posted in the system log |
+
+To cancel a PC restart during its 30-second countdown, run `shutdown /a` on the PC.
+
+### Settings
+
+- **`config.py`** holds all settings, the bot token and the keys.
+- **The dashboard** edits delete rules, restrictions, news sources and shows feedback. Double-click `start_dashboard.bat`, then open <http://localhost:8080> on the bot's PC. Enter the dashboard password when asked; the username can be anything.
+
+Restart the bot after editing `config.py`.
+
+### Where things are
+
+| Path | What it is |
+|---|---|
+| `data/bot.db` | The bot's database |
+| `backups/` | Nightly database backups, 14 kept |
+| `logs/bot.log` | Technical log, the first place to look when something's wrong |
+| `sources.json` | The list of news sources |
+
+## New install
+
+In short:
+
+1. Install Python 3.12 and run `install.bat`.
+2. Create the bot in the [Discord Developer Portal](https://discord.com/developers/applications) and turn on the Server Members and Message Content intents.
+3. Fill in `config.py`.
+4. Run `start_bot.bat`.
+
+The leaderboard needs one set of free developer credentials per platform you use, all owned by the bot's operator: a Client ID and Secret for Twitch and Kick, and an API key for YouTube.
+
+## Project layout
+
+| File | What it does |
+|---|---|
+| `bot.py` | Starts the bot and loads its features |
+| `cogs/admin.py` | Owner tools, maintenance, backups and restarts |
+| `cogs/auditlog.py` | Log channels |
+| `cogs/cleanup.py` | Delete rules and channel restrictions |
+| `cogs/news.py` | News collection, posting, digest and votes |
+| `cogs/pcstatus.py` | PC and bot health |
+| `cogs/roles.py` | Roles message, Live Now role and the streamer area |
+| `cogs/streamers.py` | Leaderboard and live tracking |
+| `dashboard.py` | Local settings page |
+
+Built with Python, discord.py, SQLite, feedparser, BeautifulSoup, Playwright and Flask.
+
+## Security
+
+- **Never share `config.py`, `data/`, `backups/` or `logs/`, or put them anywhere public.** They hold the bot token and people's activity. `.gitignore` keeps them out of normal Git uploads, but not out of files uploaded by hand on GitHub's website.
+- If the token ever leaks, reset it right away in the Developer Portal, on the Bot page.
+- The dashboard only accepts connections from the bot's PC. Keep it that way.
+- Keep **Public Bot** turned off in the Developer Portal. As a backstop, the bot leaves any server other than the one set in `SERVER_ID`.
