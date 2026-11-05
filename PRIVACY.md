@@ -70,7 +70,7 @@ Information is stored in a file on one PC controlled by the server owner, along 
 - **Drop a role:** remove your reaction in the roles channel.
 - **Anything else:** ask the server owner on Discord to show you or delete what's stored about you, including votes and log entries.
 
-**What `/streamer leave` doesn't reach straight away:** older backups on the PC, which are replaced within about 14 days; the GitHub backup copy, until the next time it's replaced; log entries, which expire after 30 days; and leaderboard posts already made in Discord channels, which the server owner can remove if you ask.
+**What `/streamer leave` doesn't reach straight away:** older backups on the PC, which are replaced within about 14 days; the GitHub backup copy, which is normally replaced every night; log entries, which expire after 30 days; and leaderboard posts already made in Discord channels, which the server owner can remove if you ask.
 
 ## Age
 

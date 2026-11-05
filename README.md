@@ -76,7 +76,7 @@ Only the bot owner can run these. Being a Discord admin isn't enough, and anyone
 
 | When | What |
 |---|---|
-| Every night at 4 AM (PC time) | Backup, cleanup of old records, and removal of log posts older than 30 days |
+| Every night at 4 AM (PC time) | Backup on the PC and to a private GitHub repository, cleanup of old records, and removal of log posts older than 30 days |
 | About once a week at 4 AM | Cleanup and backup, then a PC restart. Announced 1 hour ahead, and due once the PC has been on for 7 days. |
 | Hourly | PC status posted in the system log |
 
@@ -121,6 +121,7 @@ The leaderboard needs one set of free developer credentials per platform you use
 | `cogs/pcstatus.py` | PC and bot health |
 | `cogs/roles.py` | Roles message, Live Now role and the streamer area |
 | `cogs/streamers.py` | Leaderboard and live tracking |
+| `offsite.py` | Nightly off-site backup to GitHub |
 | `dashboard.py` | Local settings page |
 
 Built with Python, discord.py, SQLite, feedparser, BeautifulSoup, Playwright and Flask.
