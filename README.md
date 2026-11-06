@@ -26,7 +26,6 @@ It isn't a public bot and only stays in its own server. See the [Privacy Policy]
 |---|---|
 | `/ping` | Checks the bot is awake |
 | `/leaderboard` | Shows standings, today, yesterday, this week, this quarter or past winners |
-| `/streamer list` | Shows who's linked and on which platforms |
 | `/streamer profile` | Shows streamer stats for the last 30 days |
 
 **To pick roles:** react in the roles channel, and remove the reaction to drop the role.
@@ -41,30 +40,52 @@ It isn't a public bot and only stays in its own server. See the [Privacy Policy]
 | `/streamer link` | Links a channel from anywhere. Only you see the reply. |
 | `/streamer unlink` | Removes one platform and keeps your stats |
 | `/streamer aliases` | Adds other names people use for you, for collab tracking |
-| `/streamer leave` | Deletes all your streamer data |
+| `/streamer leave` or `/streamer remove` | Deletes all your streamer data |
 
-You can also paste your channel link in the private links channel, which you open with 🎥 in the roles channel or `/streamer open`. The bot removes the message, confirms by DM and asks if you have more. Press **That's it** and the channel disappears for you. It also closes by itself after 30 minutes with nothing new.
+You can also paste your channel link in the private links channel, which you open with 🎥 in the roles channel or `/streamer open`. The bot removes the message and keeps one DM up to date, with a green or red light for each platform and a button back to the channel. Press **That's it** and the channel disappears for you. It also closes by itself after 30 minutes with nothing new.
 
 **All the bot needs from a streamer is the channel link. Never share a stream key or password.**
 
-### Owner only
+### Moderators and up
 
-Only the bot owner can run these. Being a Discord admin isn't enough, and anyone else just gets a "no permission" reply. Most are hidden from regular members' slash menus. Discord can't hide part of a group, so the owner-only `/streamer` options are still listed.
+Admins and the owner can use these too. Anyone else gets a "no permission" reply. Most are hidden from regular members' slash menus. Discord can't hide part of a group, so some options still show up in the list.
 
 | Command | What it does |
 |---|---|
-| `/news` | Manages sources: `sources`, `toggle`, `settier`, `addsource`, `test`, `testall`, `pollnow` |
-| `/news digest` | Posts the current 3-hour digest so far |
-| `/news stats`, `/news overlap` | Shows how votes affect sources, and which sources repeat each other |
-| `/cleanup`, `/restrict` | Sets delete rules and channel restrictions |
-| `/audit` | Shows log channels and recent log lines |
-| `/roles refresh` | Applies role changes from `config.py` |
-| `/pc` | Shows PC and bot health |
-| `/streamer add`, `remove`, `setchannel`, `postnow`, `test` | Manages the leaderboard |
-| `/status`, `/sync`, `/backup` | Shows health, re-registers commands, backs up now |
+| `/streamer list` | Shows who has linked which platforms, with a green or red light for each. No channel names. |
+| `/streamer test` | Checks the platform keys and how many people are live |
+| `/news` | `sources`, `test`, `testall`, `stats`, `overlap`: looks at news sources without changing them |
+| `/audit` | `status`, `recent`: shows log channels and recent log lines, with linked channel names hidden |
+| `/cleanup`, `/restrict` | Lists the delete rules and channel restrictions |
+| `/maintenance` | Shows planned maintenance |
+
+### Admins and up
+
+Anyone with Discord's Administrator permission or a role listed in `config.py`, and the owner.
+
+| Command | What it does |
+|---|---|
+| `/streamer add` | Links a channel for someone else |
+| `/streamer remove` | Removes someone else from the leaderboard and deletes their data |
+| `/streamer postnow` | Posts the daily recap now |
+| `/news` | `toggle`, `settier`, `addsource`, `pollnow`: changes sources and checks them now |
+| `/status`, `/pc` | Shows bot and PC health |
+
+### Owner only
+
+Being a Discord admin isn't enough for these.
+
+| Command | What it does |
+|---|---|
 | `/restart`, `/shutdown` | Restarts or stops the bot, with a notice |
 | `/pcrestart` | Cleans up, backs up, and restarts the whole PC |
-| `/maintenance` | Shows, schedules or cancels announced maintenance |
+| `/maintenance` | `schedule`, `cancel`, `setchannel` |
+| `/sync`, `/backup` | Re-registers commands, backs up now |
+| `/roles refresh` | Applies role changes from `config.py` |
+| `/cleanup`, `/restrict` | `add`, `remove`: changes delete rules and channel restrictions |
+| `/audit` | `setchannel`, `clearchannel` |
+| `/news` | `setchannel`, `setfirehose`, `setdigest`, `digest` |
+| `/streamer setchannel` | Picks where the leaderboard posts |
 
 ## Running the bot
 

@@ -1,6 +1,6 @@
 # Botty Boi Privacy Policy
 
-**Last updated: November 5, 2026**
+**Last updated: November 6, 2026**
 
 Botty Boi is a private Discord bot for one gaming server, run by that server's owner as a hobby. It isn't a business or a public service. This page explains what it stores, why, who can see it, and how to have it removed.
 
@@ -35,7 +35,7 @@ This only applies if you link a channel, or an admin links one for you.
 
 All of this is public information from those platforms. The bot only looks up public stream details. It can't sign in to your account, post for you, or see anything private.
 
-**What others can see:** leaderboard channels show your Discord name, hours, viewer numbers, games and points to anyone with access to those channels. While you're live, you may get the Live Now role, which anyone in the server can see. Only admins and the bot can see which channel you linked.
+**What others can see:** leaderboard channels show your Discord name, hours, viewer numbers, games and points to anyone with access to those channels. While you're live, you may get the Live Now role, which anyone in the server can see. Moderators and admins can see which platforms you've linked. Only admins, the bot and anyone given access to the private log channels can see which channel you linked.
 
 ## What the bot doesn't collect
 
@@ -48,6 +48,7 @@ All of this is public information from those platforms. The bot only looks up pu
 
 - The server owner, who runs the PC the bot lives on
 - Server admins and anyone given access to the private log channels
+- Moderators, who can read recent log lines with linked channel names hidden
 - The people listed under "What others can see" above, for leaderboard information
 
 ## Other services
