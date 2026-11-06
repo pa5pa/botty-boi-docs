@@ -15,6 +15,7 @@ Botty Boi is a private Discord bot for one gaming server, run by that server's o
 | Commands you run: your Discord ID and username, the command, its options, the channel and the time. This includes commands the bot can see you run on other bots, such as Jockie Music. | So admins can see who did what | 30 days |
 | Messages the bot removes under a server rule: your ID and username, the channel, and up to the first 120 characters | So admins can review moderation | 30 days |
 | Role changes made through the roles channel | So admins can see changes | 30 days |
+| While the streamer links channel is open for you: your Discord ID and when you last used it | To close it automatically | Deleted when it closes, normally within about 30 minutes |
 | News votes, if your votes count: your Discord ID, the story, your vote and the time | To learn which news sources are useful | 30 days with your ID. After that, the vote stays without your ID. |
 
 These entries are also posted to private log channels in the server. The bot deletes its log posts and database entries once they're past 30 days. The cleanup runs nightly, so an entry can last a little longer, and it also remains in backups until they're replaced.

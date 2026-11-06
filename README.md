@@ -31,16 +31,19 @@ It isn't a public bot and only stays in its own server. See the [Privacy Policy]
 
 **To pick roles:** react in the roles channel, and remove the reaction to drop the role.
 
+**Music:** use `m!` commands in the music channel or any voice channel's text chat. Requests are removed automatically to keep things tidy.
+
 ### Streamers
 
 | Command | What it does |
 |---|---|
-| `/streamer link` | Links a channel. Only you see the reply. |
+| `/streamer open` | Opens the private links channel so you can paste links |
+| `/streamer link` | Links a channel from anywhere. Only you see the reply. |
 | `/streamer unlink` | Removes one platform and keeps your stats |
 | `/streamer aliases` | Adds other names people use for you, for collab tracking |
 | `/streamer leave` | Deletes all your streamer data |
 
-You can also paste your channel link in the private links channel. The bot removes the message and confirms by DM.
+You can also paste your channel link in the private links channel, which you open with 🎥 in the roles channel or `/streamer open`. The bot removes the message, confirms by DM and asks if you have more. Press **That's it** and the channel disappears for you. It also closes by itself after 30 minutes with nothing new.
 
 **All the bot needs from a streamer is the channel link. Never share a stream key or password.**
 
