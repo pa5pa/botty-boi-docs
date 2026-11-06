@@ -59,7 +59,8 @@ All of this is public information from those platforms. The bot only looks up pu
 - **Twitch, Kick and YouTube** (Google): when these checks are turned on, the bot sends the linked channel name to the matching platform to ask whether that channel is live.
 - **GitHub:** an off-site backup copy of the bot's database is kept in a private GitHub repository, so it can be restored if the PC fails. That copy includes the information described on this page, and GitHub stores it under [GitHub's Privacy Statement](https://docs.github.com/site-policy/privacy-policies/github-general-privacy-statement).
 - **News sites:** the bot reads public news feeds. No information about you is sent to them.
-- **Anthropic (AI summaries):** currently **off**. This policy will be updated before it's ever turned on, because it would send news text and stream titles and descriptions to Anthropic.
+- **Google Gemini (AI reading of streams):** when turned on, the bot sends the public title and description of a live stream to Google to work out who's named and which game is being played. It doesn't send your Discord name or ID, your nicknames or which channel is yours, but the title or description may name people. The bot uses Google's free service, so Google may use this text to improve its products and its human reviewers may read it.
+- **Anthropic (AI summaries):** currently **off**. This policy will be updated before it's ever turned on, because it would send news text to Anthropic.
 
 Your information is never sold or shared for advertising.
 
