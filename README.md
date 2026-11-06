@@ -14,7 +14,7 @@ It isn't a public bot and only stays in its own server. See the [Privacy Policy]
 | **Streamer leaderboard** | Tracks Twitch, Kick and YouTube: daily recap, weekly top 5, quarterly top 3 and a live standings message. |
 | **Live Now** | A role that lists people in their own group in the member list while they stream. |
 | **Roles** | People react in the roles channel to open the channels they want. |
-| **Cleanup** | Deletes messages by rule and keeps commands in the right channel. |
+| **Cleanup** | Deletes messages by rule and keeps commands in the right channel. Pinned messages are never removed. |
 | **Logs** | Private channels record commands, moderation, news decisions and system events. |
 | **Health** | Hourly PC status, warnings when the PC is struggling, nightly backups, and a weekly PC restart. |
 
