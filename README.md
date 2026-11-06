@@ -39,7 +39,7 @@ It isn't a public bot and only stays in its own server. See the [Privacy Policy]
 | `/streamer open` | Opens the private links channel so you can paste links |
 | `/streamer link` | Links a channel from anywhere. Only you see the reply. |
 | `/streamer unlink` | Removes one platform and keeps your stats |
-| `/streamer aliases` | Adds other names people use for you, for collab tracking |
+| `/streamer aliases` | Adds other names people use for you, so naming you counts as a collab with you and your own name doesn't count as one |
 | `/streamer leave` or `/streamer remove` | Deletes all your streamer data |
 
 You can also paste your channel link in the private links channel, which you open with 🎥 in the roles channel or `/streamer open`. The bot removes the message and keeps one DM up to date, with a green or red light for each platform and a button back to the channel. Press **That's it** and the channel disappears for you. It also closes by itself after 30 minutes with nothing new.

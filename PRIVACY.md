@@ -29,13 +29,15 @@ This only applies if you link a channel, or an admin links one for you.
 | What | Why | How long it's kept |
 |---|---|---|
 | Your Discord ID, display name, linked Twitch, Kick or YouTube channel, and any nicknames you add | To know whose stream is whose | Until you remove it |
-| Each stream: start and end time, title, peak viewers, and friends named in the title or description | Leaderboard stats and collab tracking | Up to about 800 days |
+| Each stream: start and end time, title, peak viewers, and people named in the title or description as streaming with you | Leaderboard stats and collab tracking | Up to about 800 days |
 | Regular checks during a stream: viewer count, game, and whether a title and game were set | Leaderboard stats | Up to about 200 days |
 | Weekly and quarterly results: your place, points and hours | Past winners | Until you remove them |
 
+People named this way may not be in the server. The bot keeps only the name as written in the public title or description, and how often it came up. Anyone named can ask the server owner to remove it.
+
 All of this is public information from those platforms. The bot only looks up public stream details. It can't sign in to your account, post for you, or see anything private.
 
-**What others can see:** leaderboard channels show your Discord name, hours, viewer numbers, games and points to anyone with access to those channels. While you're live, you may get the Live Now role, which anyone in the server can see. Moderators and admins can see which platforms you've linked. Only admins, the bot and anyone given access to the private log channels can see which channel you linked.
+**What others can see:** leaderboard channels show your Discord name, hours, viewer numbers, games and collabs to anyone with access to those channels. While you're live, you may get the Live Now role, which anyone in the server can see. Moderators and admins can see which platforms you've linked. Only admins, the bot and anyone given access to the private log channels can see which channel you linked.
 
 ## What the bot doesn't collect
 
