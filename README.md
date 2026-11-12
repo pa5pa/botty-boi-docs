@@ -12,6 +12,7 @@ It isn't a public bot and only stays in its own server. See the [Privacy Policy]
 | **News channels** | Every article goes to the firehose, the best stories get their own posts, and a digest covers each 3-hour block. |
 | **News voting** | Admins and trusted voters rate posts with reactions, which adjusts source scores. The bot removes each reaction once it's counted, so votes aren't on show. |
 | **Streamer leaderboard** | Tracks Twitch, Kick and YouTube: daily recap, weekly top 5, quarterly top 3 and a live standings message. |
+| **Joint stream** | Lets a hand-picked list of people control the shared stream's OBS from Discord, and shows everyone's channel links. |
 | **Live Now** | A role that lists people in their own group in the member list while they stream. |
 | **Roles** | People react in the roles channel to open the channels they want. |
 | **Cleanup** | Deletes messages by rule and keeps commands in the right channel. Pinned messages are never removed. |
@@ -27,6 +28,7 @@ It isn't a public bot and only stays in its own server. See the [Privacy Policy]
 | `/ping` | Checks the bot is awake |
 | `/leaderboard` | Shows standings, today, yesterday, this week, this quarter or past winners |
 | `/streamer profile` | Shows streamer stats for the last 30 days |
+| `/links` | Channel links for everyone on the joint stream, or one person with `/links streamer:` |
 
 **To pick roles:** react in the roles channel, and remove the reaction to drop the role.
 
@@ -45,6 +47,21 @@ It isn't a public bot and only stays in its own server. See the [Privacy Policy]
 You can also paste your channel link in the private links channel, which you open with 🎥 in the roles channel or `/streamer open`. The bot removes the message and keeps one DM up to date, with a green or red light for each platform and a button back to the channel. Press **That's it** and the channel disappears for you. It also closes by itself after 30 minutes with nothing new.
 
 **All the bot needs from a streamer is the channel link. Never share a stream key or password.**
+
+### Joint stream controllers
+
+Only the people listed by user ID in `config.py` can use these. Being the owner, an admin or a moderator doesn't count on its own. Replies are private.
+
+| Command | What it does |
+|---|---|
+| `/feature` | Shows one streamer |
+| `/next` | Skips to the next streamer |
+| `/hold on` / `/hold off` | Stops or resumes switching away from who's on now |
+| `/squad` | Switches to the grid view |
+| `/auto` | Goes back to normal automatic switching |
+| `/jointstatus` | Shows whether OBS is connected and which scene is live |
+
+The bot only sends a short message to OBS. OBS decides what to do with it.
 
 ### Moderators and up
 
@@ -140,6 +157,7 @@ The leaderboard needs one set of free developer credentials per platform you use
 | `bot.py` | Starts the bot and loads its features |
 | `cogs/admin.py` | Owner tools, maintenance, backups and restarts |
 | `cogs/auditlog.py` | Log channels |
+| `cogs/jointstream.py` | Joint stream controls for OBS, and `/links` |
 | `cogs/cleanup.py` | Delete rules and channel restrictions |
 | `cogs/news.py` | News collection, posting, digest and votes |
 | `cogs/pcstatus.py` | PC and bot health |
