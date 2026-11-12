@@ -12,7 +12,7 @@ It isn't a public bot and only stays in its own server. See the [Privacy Policy]
 | **News channels** | Every article goes to the firehose, the best stories get their own posts, and a digest covers each 3-hour block. |
 | **News voting** | Admins and trusted voters rate posts with reactions, which adjusts source scores. The bot removes each reaction once it's counted, so votes aren't on show. |
 | **Streamer leaderboard** | Tracks Twitch, Kick and YouTube: daily recap, weekly top 5, quarterly top 3 and a live standings message. |
-| **Joint stream** | Lets a hand-picked list of people control the shared stream's OBS from Discord, and shows everyone's channel links. |
+| **Joint stream** | Lets a hand-picked list of people control the shared stream's OBS from Discord, shows everyone's channel links, and keeps a weekly stats post for the joint channel. |
 | **Live Now** | A role that lists people in their own group in the member list while they stream. |
 | **Roles** | People react in the roles channel to open the channels they want. |
 | **Cleanup** | Deletes messages by rule and keeps commands in the right channel. Pinned messages are never removed. |
