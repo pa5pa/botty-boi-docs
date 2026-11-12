@@ -60,6 +60,7 @@ Only the people listed by user ID in `config.py` can use these. Being the owner,
 | `/squad` | Switches to the grid view |
 | `/auto` | Goes back to normal automatic switching |
 | `/jointstatus` | Shows OBS's connection, the live scene, the mode and who's sending video |
+| `/jointsend` | DMs you your private link for sending your game to the joint stream |
 
 The bot picks the scene. In automatic mode it features each person who's sending video for a few minutes, with the squad grid after every full round. It only switches while the stream is live and the grid or someone's featured scene is on, so Starting Soon, Be Right Back and Ending stay put until you change them in OBS. OBS can also send a cue, like a death screen, to switch away early.
 
